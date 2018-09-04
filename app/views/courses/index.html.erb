@@ -1,0 +1,9 @@
+<h1>Courses</h1>
+<%= link_to "New course", courses_new_path %>
+<% @courses.reverse.each do |c| %>
+<div class="course">
+  <h3>Name: <%= c.name %></h3>
+  <h4>Total hours: <%= c.total_hours %></h4>
+</div>
+<hr>
+<% end %>

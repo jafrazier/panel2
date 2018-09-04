@@ -1,0 +1,7 @@
+<%= form_for@course do |f|%>
+<%= f.label 'Course name '%>
+<%= f.text_field :name%><br>
+<%= f.label 'Total hours'%>
+<%= f.number_field :total_hours%><br>
+<%= f.submit %>
+<%end%>
