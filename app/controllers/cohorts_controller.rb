@@ -1,9 +1,15 @@
 class CohortsController < ApplicationController
   def new
+    @instructors = Instructor.all
+    @students = Student.all
+    @courses = Course.all
     @cohort = Cohort.new
   end
 
   def create
+    @instructors = Instructor.all
+    @students = Student.all
+    @courses = Course.all
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
       redirect_to @cohort
@@ -26,6 +32,6 @@ class CohortsController < ApplicationController
   private
 
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date, :course_id, :student_ids, :instructor_id)
+    params.require(:cohort).permit(:name, :start_date, :end_date, :course_id, :student_id, :instructor_id)
   end
 end

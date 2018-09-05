@@ -1,3 +1,13 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<h1>Students</h1>
 <%= link_to "New student", students_new_path %>
+<% @students.reverse.each do |s| %>
+<div class="student">
+  <h3><%= s.first_name.capitalize %> <%= s.last_name.capitalize %></h3>
+  <p>Age: <%= s.age %></p>
+  <p>Education: <%= s.education %></p>
+  <% Cohort.where(id: s.cohort_id).each do |c|%>
+  <p>Enrolled in <%= c.name %></p>
+  <% end %>
+</div>
+<hr>
+<% end %>

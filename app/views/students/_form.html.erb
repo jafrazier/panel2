@@ -7,5 +7,6 @@
 <%= f.number_field :age %><br>
 <%= f.label 'Education'%>
 <%= f.text_field :education%><br>
+<%= f.collection_select :cohort_id, Cohort.all , :id, :name , {include_blank: true} %><br>
 <%= f.submit %>
 <% end %>

@@ -1,3 +1,10 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+<h1>Instructors</h1>
 <%= link_to "New instructor", instructors_new_path %>
+<% @instructors.reverse.each do |i| %>
+<div class="instructor">
+<h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> </h3>
+<p>Age: <%= i.age %></p>
+<p>Education: <%= i.education %></p>
+</div>
+<hr>
+<% end %>

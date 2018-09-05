@@ -13,7 +13,7 @@ class InstructorsController < ApplicationController
   end
 
   def show
-    @instructor = Instructor.find(parmas[:id])
+    @instructor = Instructor.find(params[:id])
   end
 
   def edit
@@ -24,6 +24,8 @@ class InstructorsController < ApplicationController
   end
 
   private
+
+
 
   def instructor_params
     params.require(:instructor).permit(:first_name, :last_name, :age, :salary, :education)
