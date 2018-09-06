@@ -1,22 +1,18 @@
 <h1>Cohorts</h1>
-<p>Find me in app/views/cohorts/index.html.erb</p>
 <%= link_to "New cohort", cohorts_new_path %>
 <% @cohorts.each do |c|%>
 <div class="cohort">
   <h3>Name: <%= c.name %></h3>
-  <% Instructor.where(id: c.instructor_id).each do |i|%>
-  <p>Instructor: <%= i.full_name%></p>
-  <% end %>
+  <p>Starts: <%= c.start_date.strftime("%B %d, %Y") %></p>
+  <p>Ends: <%= c.end_date.strftime("%B %d, %Y") %></p>
   <% Course.where(id: c.course_id).each do |x| %>
    <p>Course: <%= x.name%></p>
   <% end %>
-  <h5>Students</h5>
-  <ol>
-    <% Student.where(cohort_id: c.id).each do |s|%>
-      <li><%= s.full_name %></li>
-    <% end %>
-  </ol>
-
+  <% Instructor.where(id: c.instructor_id).each do |i|%>
+  <p>Instructor: <%= i.full_name%></p>
+  <%= link_to 'Show', c %>
+  <%= link_to 'Edit', edit_cohort_path(c)%>
+  <% end %>
 </div>
 <hr>
 <%end%>

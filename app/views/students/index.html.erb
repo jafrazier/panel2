@@ -7,6 +7,8 @@
   <p>Education: <%= s.education %></p>
   <% Cohort.where(id: s.cohort_id).each do |c|%>
   <p>Enrolled in <%= c.name %></p>
+  <%= link_to 'Show', s %>
+  <%= link_to 'Edit', edit_student_path(s)%>
   <% end %>
 </div>
 <hr>

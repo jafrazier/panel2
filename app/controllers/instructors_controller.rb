@@ -17,6 +17,16 @@ class InstructorsController < ApplicationController
   end
 
   def edit
+    @instructor = Instructor.find(params[:id])
+  end
+
+  def update
+    @instructor = Instructor.find(params[:id])
+    if @instructor.update(instructor_params)
+      redirect_to @instructor
+    else
+      render 'edit'
+    end
   end
 
   def index

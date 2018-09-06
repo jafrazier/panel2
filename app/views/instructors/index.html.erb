@@ -2,9 +2,15 @@
 <%= link_to "New instructor", instructors_new_path %>
 <% @instructors.reverse.each do |i| %>
 <div class="instructor">
+  <%= link_to 'Show', i %>
+  <%= link_to 'Edit', edit_instructor_path(i)%>
 <h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> </h3>
 <p>Age: <%= i.age %></p>
 <p>Education: <%= i.education %></p>
+<h4>Cohorts</h4>
+<%Cohort.where(instructor_id: i.id).each do |c|%>
+<p><%=c.name%>  <%= link_to 'Show', c %></p>
+<% end %>
 </div>
 <hr>
 <% end %>

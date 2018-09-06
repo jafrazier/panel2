@@ -23,11 +23,29 @@ class CohortsController < ApplicationController
   end
 
   def edit
+    @instructors = Instructor.all
+    @students = Student.all
+    @courses = Course.all
+    @cohort = Cohort.find(params[:id])
+  end
+
+  def update
+    @instructors = Instructor.all
+    @students = Student.all
+    @courses = Course.all
+    @cohort = Cohort.find(params[:id])
+    if @cohort.update(cohort_params)
+      redirect_to @cohort
+    else
+      render 'edit'
+    end
+
   end
 
   def index
     @cohorts = Cohort.all
   end
+
 
   private
 
