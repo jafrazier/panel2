@@ -1,4 +1,6 @@
 class CohortsController < ApplicationController
+  
+
   def new
     @instructors = Instructor.all
     @students = Student.all
