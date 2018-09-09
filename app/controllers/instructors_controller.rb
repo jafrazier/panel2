@@ -1,4 +1,5 @@
 class InstructorsController < ApplicationController
+  before_action :require_user , except: [:new, :create]
   def new
     @instructor = Instructor.new
   end

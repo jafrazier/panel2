@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :require_user
   def new
     @student = Student.new
   end

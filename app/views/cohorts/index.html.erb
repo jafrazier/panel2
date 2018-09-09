@@ -1,18 +1,35 @@
-<h1>Cohorts</h1>
-<%= link_to "New cohort", cohorts_new_path %>
-<% @cohorts.each do |c|%>
-<div class="cohort">
-  <h3>Name: <%= c.name %></h3>
-  <p>Starts: <%= c.start_date.strftime("%B %d, %Y") %></p>
-  <p>Ends: <%= c.end_date.strftime("%B %d, %Y") %></p>
-  <% Course.where(id: c.course_id).each do |x| %>
-   <p>Course: <%= x.name%></p>
-  <% end %>
-  <% Instructor.where(id: c.instructor_id).each do |i|%>
-  <p>Instructor: <%= i.full_name%></p>
-  <%= link_to 'Show', c %>
-  <%= link_to 'Edit', edit_cohort_path(c)%>
-  <% end %>
+<div class="myContainer">
+    <h1>Cohorts   <button class="btn pageBtn"><%= link_to "New cohort", cohorts_new_path%></button></h1>
+
+
+  <% @cohorts.each do |c|%>
+
+    <div class="cohort">
+
+      <h3><%= c.name %> <button class="btn infoButton"><%= link_to 'Show', c %></button>
+        <button class="btn infoButton"><%= link_to 'Edit', edit_cohort_path(c)%></button></h3>
+
+      <div class="cohortInfo">
+
+        <p>Starts: <%= c.start_date.strftime("%B %d, %Y") %></p>
+        <p>Ends: <%= c.end_date.strftime("%B %d, %Y") %></p>
+        <% Course.where(id: c.course_id).each do |x| %>
+          <p>Course: <%= x.name%></p>
+        <% end %>
+        <% Instructor.where(id: c.instructor_id).each do |i|%>
+          <p>Instructor: <%= i.full_name%></p>
+        <% end %>
+        <button class="showStudents btn">Students</button>
+        <div class="studentList">
+          <h4>Name</h4>
+          <% Student.where(cohort_id: c.id).each do |s|%>
+          <p><%= s.full_name %> <span><button class="btn infoButton studentBtn"><%= link_to 'Show', c %></button>  <button class="btn infoButton studentBtn"><%= link_to 'Edit', edit_student_path(c)%></button> </span></p>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+  <%end%>
+
 </div>
-<hr>
-<%end%>

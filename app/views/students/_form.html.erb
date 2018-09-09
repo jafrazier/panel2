@@ -1,12 +1,9 @@
 <%= form_for @student do |f| %>
-<%= f.label 'First name' %>
-<%= f.text_field :first_name %><br>
-<%= f.label 'Last name' %>
-<%= f.text_field :last_name %><br>
-<%= f.label 'Age' %>
-<%= f.number_field :age %><br>
-<%= f.label 'Education'%>
-<%= f.text_field :education%><br>
-<%= f.collection_select :cohort_id, Cohort.all , :id, :name , {include_blank: true} %><br>
-<%= f.submit %>
+<%= f.text_field :first_name, placeholder: 'First name', :class => "form-control"%><br>
+<%= f.text_field :last_name, placeholder: 'Last name', :class => "form-control" %><br>
+<%= f.number_field :age, placeholder: 'Age', :class => "form-control"%><br>
+<%= f.text_field :education, placeholder: 'Education', :class => "form-control"%><br>
+<%= f.label 'Pick a cohort', :class => "label" %>
+<%= f.collection_select :cohort_id, Cohort.all , :id, :name, {include_blank: true}, :class => "form-control" %><br>
+<%= f.submit :class=>"btn" %>
 <% end %>

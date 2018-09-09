@@ -1,5 +1,5 @@
 class CohortsController < ApplicationController
-  
+  before_action :require_user
 
   def new
     @instructors = Instructor.all

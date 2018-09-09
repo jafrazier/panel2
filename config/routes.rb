@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'courses/show'
   get 'courses/edit'
   get 'courses/index'
-  get 'signup' => 'instructors#new'
+  get '/signup' => 'instructors#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'instructors/show'

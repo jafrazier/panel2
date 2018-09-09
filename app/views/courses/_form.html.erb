@@ -1,7 +1,5 @@
 <%= form_for@course do |f|%>
-<%= f.label 'Course name '%>
-<%= f.text_field :name%><br>
-<%= f.label 'Total hours'%>
-<%= f.number_field :total_hours%><br>
-<%= f.submit %>
+<%= f.text_field :name, placeholder: 'Name', :class => "form-control"%><br>
+<%= f.number_field :total_hours, placeholder: 'Total hours', :class => "form-control"%><br>
+<%= f.submit :class=>"btn" %>
 <%end%>

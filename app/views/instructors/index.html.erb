@@ -1,16 +1,21 @@
-<h1>Instructors</h1>
-<%= link_to "New instructor", new_instructor_path %>
-<% @instructors.reverse.each do |i| %>
-<div class="instructor">
-  <%= link_to 'Show', i %>
-  <%= link_to 'Edit', edit_instructor_path(i)%>
-<h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> </h3>
-<p>Age: <%= i.age %></p>
-<p>Education: <%= i.education %></p>
-<h4>Cohorts</h4>
-<%Cohort.where(instructor_id: i.id).each do |c|%>
-<p><%=c.name%>  <%= link_to 'Show', c %></p>
-<% end %>
+<div class="myContainer">
+  <h1>Instructors <button class="btn pageBtn"><%= link_to "New instructor", new_instructor_path %></button></h1>
+  <% @instructors.reverse.each do |i| %>
+    <div class="instructor">
+      <h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> <button class="btn infoButton"><%= link_to 'Show', i %></button> <button class="btn infoButton"><%= link_to 'Edit', edit_instructor_path(i)%></button></h3>
+      <div class="instructorInfo">
+        <p>Age: <%= i.age %></p>
+        <p>Education: <%= i.education %></p>
+        <p>Salary: $<%= i.salary %></p>
+        <p>Email: <%= i.email %></p>
+        <button class="showCohots btn">Cohorts</button>
+        <div class="cohortList">
+          <%Cohort.where(instructor_id: i.id).each do |c|%>
+            <p><%=c.name%>
+            <button class="btn infoButton cohortBtn"><%= link_to 'Show', c %></button></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<hr>
-<% end %>

@@ -14,3 +14,228 @@
  *=
  */
 @import 'bootstrap';
+
+// Global CSS
+
+body {
+  background: rgba(0, 0, 0, .8);
+  width: 98vw;
+  height: 98vh;
+}
+
+header{
+  width: 100vw;
+  margin: 0;
+  height: 5vh;
+}
+
+p {
+  margin: .5vh 0;
+}
+
+a {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+  color: rgba(255,255,255,.8);
+}
+
+h6 {
+  background: rgba(255, 255, 255, .5);
+  padding: 0 1vh;
+  margin: 0;
+  height: 6vh;
+  text-align: center;
+  font-size: 3vh;
+  border-bottom: black 2px solid;
+  border-radius: 10px 10px 0 0;
+}
+
+// Nav CSS
+.navbar {
+  height: 4vh;
+}
+
+.secondary-nav .nav-item a{
+  padding: .3em 1em;
+
+}
+
+.secondary-nav .nav-item:hover {
+  background: rgba(0,0,0,.5);
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  height: 15vh;
+}
+
+.secondary-nav {
+  width: 100vw;
+}
+
+// Forms CSS
+
+.label {
+  margin-left: 2.5vw
+}
+.login, .newInstruc, .newCohort, .newCourse,.newStudent{
+  width: 30vw;
+  left: 35vw;
+  position: relative;
+  border: black 3px solid;
+  background: rgba(255, 255, 255, .3);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .7);
+}
+
+.login{
+  height: 35vh;
+  top: 10vh;
+}
+
+.login h3, .newInstruc h3, .newCohort h3, .newCourse h3, ,.newStudent h3, h3{
+  background: rgba(255, 255, 255, .5);
+  padding: 0 1vh;
+  margin: 0;
+  margin-bottom: 2.5vw;
+  height: 6vh;
+  text-align: center;
+  font-size: 4vh;
+  border-bottom: black 2px solid;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-control {
+  width: 25vw;
+  margin: 0 2.5vw;
+  border-radius: 20px;
+}
+
+.newInstruc, .newCohort{
+  height: 75vh;
+  top: 5vh;
+}
+.newStudent {
+  height: 65vh;
+  top: 5vh;
+}
+.newCourse {
+  top: 5vh;
+}
+
+.btn {
+  width: 10vw;
+  margin-left: 10vw;
+  background-color: rgba(0, 0, 0, .7);
+  border: rgba(0, 0, 0, .7) 1px solid;
+  font-size: 1.1vw;
+  color: white;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, .5);
+  border: rgba(0, 0, 0, .7) 1px solid;
+}
+
+.btn:active {
+  background-color: rgba(0, 0, 0, .5);
+  border: rgba(0, 0, 0, .7) 3px solid;
+}
+
+.btn:focus {
+  background-color: rgba(0, 0, 0, .5);
+  border: rgba(0, 0, 0, .7) 3px solid;
+}
+
+.infoButton {
+  width: 5vw;
+  margin: 0;
+  color: white;
+}
+
+.infoButton {
+  width: 5vw;
+  margin: 0;
+  color: white;
+  padding: .1vw;
+
+}
+
+// Page CSS
+
+.myContainer{
+  margin: 0 auto;
+  height: 75vh;
+  width: 99vw;
+  overflow: scroll;
+  color: rgba(255,255,255,.8);
+}
+.myContainer h1{
+  margin: 1vh 0 2vh 0;
+}
+
+
+.cohort,.instructor {
+  width: 75vw;
+  border: black 2px solid;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .7);
+}
+
+.cohort h3, .instructor h3 , .course h3{
+  margin-bottom: 1.5vh;
+}
+
+.cohortInfo,.studentInfo, .instructorInfo, .courseInfo{
+  padding: .5em;
+}
+
+.showStudents, .pageBtn,.showCohots{
+  margin: 0;
+}
+
+.studentList, .cohortList {
+  margin-top: 2vh;
+  font-size: 1em;
+}
+
+.studentBtn, .cohortBtn{
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+  grid-gap: 2vw;
+  padding: 2vw 3vw 0 3vw;
+}
+
+.grid-item{
+  border: black 2px solid;
+  border-radius: 10px 10px 0 0;
+  color: rgba(255,255,255,.8);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .7);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 45vw 45vw;
+  grid-gap: 2vw;
+  padding: 2vw 4vw 0 4vw;
+}

@@ -1,15 +1,16 @@
-<h1>Students</h1>
-<%= link_to "New student", students_new_path %>
-<% @students.reverse.each do |s| %>
-<div class="student">
-  <h3><%= s.first_name.capitalize %> <%= s.last_name.capitalize %></h3>
-  <p>Age: <%= s.age %></p>
-  <p>Education: <%= s.education %></p>
-  <% Cohort.where(id: s.cohort_id).each do |c|%>
-  <p>Enrolled in <%= c.name %></p>
-  <%= link_to 'Show', s %>
-  <%= link_to 'Edit', edit_student_path(s)%>
+<h1>Students <button class="btn pageBtn"><%= link_to "New student", students_new_path %></button></h1>
+<div class="grid-container">
+  <% @students.reverse.each do |s| %>
+    <div class="grid-item">
+      <h6><%= s.first_name.capitalize %> <%= s.last_name.capitalize %> <button class="btn infoButton"><%= link_to 'Show', s %></button>
+      <button class="btn infoButton"><%= link_to 'Edit', edit_student_path(s)%></button></h6>
+      <div class="studentInfo">
+        <p>Age: <%= s.age %></p>
+        <p>Education: <%= s.education %></p>
+        <% Cohort.where(id: s.cohort_id).each do |c|%>
+          <p>Enrolled in <%= c.name %></p>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
-<hr>
-<% end %>

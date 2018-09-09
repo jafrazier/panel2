@@ -1,17 +1,10 @@
 <%= form_for @instructor do |f| %>
-<%= f.label 'First name' %>
-<%= f.text_field :first_name %><br>
-<%= f.label 'Last name' %>
-<%= f.text_field :last_name %><br>
-<%= f.label 'Age' %>
-<%= f.number_field :age %><br>
-<%= f.label 'Education'%>
-<%= f.text_field :education%><br>
-<%= f.label 'Salary' %>
-<%= f.number_field :salary %><br>
-<%= f.label 'Email'%>
-<%= f.email_field :email%><br>
-<%= f.label 'Password'%>
-<%= f.text_field :email%><br>
-<%= f.submit %>
+<%= f.text_field :first_name, placeholder: 'First name', :class => "form-control" %><br>
+<%= f.text_field :last_name, placeholder: 'Last name', :class => "form-control" %><br>
+<%= f.number_field :age, placeholder: 'Age', :class => "form-control"%><br>
+<%= f.text_field :education, placeholder: 'Education', :class => "form-control"%><br>
+<%= f.number_field :salary, placeholder: 'Salary', :class => "form-control" %><br>
+<%= f.email_field :email, placeholder: 'Email', :class => "form-control"%><br>
+<%= f.password_field :password, placeholder: 'Password', :class => "form-control"%><br>
+<%= f.submit :class=>"btn" %>
 <% end %>

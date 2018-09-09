@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
     @instructor = Instructor.find_by_email(params[:session][:email])
       if @instructor && @instructor.authenticate(params[:session][:password])
           session[:user_id] = @instructor.id
-          redirect_to '/'
+          redirect_to pages_home_path
       else
-        redirect_to pages_home_path
+        redirect_to '/'
       end
   end
 
