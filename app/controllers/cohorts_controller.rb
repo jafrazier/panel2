@@ -1,5 +1,5 @@
 class CohortsController < ApplicationController
-  before_action :require_user
+  before_action :require_user , except: [:destroy]
 
   def new
     @instructors = Instructor.all
@@ -46,6 +46,17 @@ class CohortsController < ApplicationController
 
   def index
     @cohorts = Cohort.all
+  end
+
+
+  def destroy
+    @cohort = Cohort.find(params[:id])
+    p "Terminating #{@cohort.name}"
+    @cohort.destroy
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to cohorts_path }
+    end
   end
 
 

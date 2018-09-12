@@ -35,6 +35,16 @@ class InstructorsController < ApplicationController
     @instructors = Instructor.all
   end
 
+  def destroy
+    @instructor = Instructor.find(params[:id])
+    p "Terminating #{@instructor.full_name}"
+    @instructor.destroy
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to instructors_path }
+    end
+  end
+
   private
 
 

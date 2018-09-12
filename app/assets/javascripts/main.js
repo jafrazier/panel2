@@ -7,4 +7,5 @@ $( document ).ready(function() {
   $('.showCohots').click(function(){
     $(this).next('div').slideToggle(1000);
   });
+  
 });

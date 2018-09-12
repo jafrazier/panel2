@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :require_user
+  before_action :require_user , except: [:destroy]
   def new
     @student = Student.new
   end
@@ -34,6 +34,17 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
   end
+
+  def destroy
+    @student = Student.find(params[:id])
+    p "Terminating #{@student.full_name}"
+    @student.destroy
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to students_path }
+    end
+  end
+
 
   private
 

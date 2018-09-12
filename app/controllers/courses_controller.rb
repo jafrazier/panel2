@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :require_user
+  before_action :require_user, except: [:destroy]
   def new
     @course = Course.new
   end
@@ -33,6 +33,16 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
+  end
+
+  def destroy
+    @course = Course.find(params[:id])
+    p "Terminating #{@course.name}"
+    @course.destroy
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to cohorts_path }
+    end
   end
 
   private

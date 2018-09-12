@@ -4,11 +4,15 @@
 
     <div class="cohort">
 
-      <h3><%= c.name %> <button class="btn infoButton"><%= link_to 'Edit', edit_cohort_path(c)%></button></h3>
+      <h3>
+        <%= c.name %>
+        <button class="btn infoButton"><%= link_to 'Edit', edit_cohort_path(c)%></button>
+        <button class="btn infoButton"><%= link_to 'Delete', cohort_path(c.id), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'terminate' %></button>
+      </h3>
 
       <div class="cohortInfo">
 
-        <p>Starts: <%= c.start_date.methods %></p>
+        <p>Starts: <%= c.start_date%></p>
         <p>Ends: <%= c.end_date  %></p>
         <% Course.where(id: c.course_id).each do |x| %>
           <p>Course: <%= x.name%></p>

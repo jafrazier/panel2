@@ -133,20 +133,26 @@ h6 {
 .secondary-nav {
   width: 100vw;
 }
-
+.subbg {
+  background: red !important;
+}
 // Forms CSS
 
 .label {
-  margin-left: 2.5vw
+  margin-left: 2.5vw;
+  display:inline;
 }
 .login, .newInstruc, .newCohort, .newCourse,.newStudent{
-  width: 30vw;
-  left: 35vw;
+  width: 35vw;
+  margin: 0 auto;
+  margin-top: 2.5vh;
   position: relative;
   border: black 3px solid;
-  background: rgba(206,193,141,.5);
+  background: rgba(0,173,154,.5);
+
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, .7);
+
 }
 
 .login{
@@ -188,27 +194,31 @@ h6 {
 
 .form-control {
   width: 25vw;
-  margin: 0 2.5vw;
+  margin-bottom: 2.5vh;
   border-radius: 20px;
+  display: inline;
 }
 
-.newInstruc, .newCohort{
-  height: 75vh;
-  top: 5vh;
+.newInstruc{
+  margin-top:-10vh;
+  height: 70vh;
+  overflow: scroll;
+
 }
-.newStudent {
+.newStudent , .newCohort{
+  margin-top: -10vh;
   height: 65vh;
-  top: 5vh;
+
 }
 .newCourse {
   height: 35vh;
-  top: 5vh;
+
 }
 
 .btn {
   width: 10vw;
-  margin-left: 10vw;
-  background-color: rgba(0, 0, 0, .3);
+  margin-left: 12.5vw;
+  background-color: rgba(255, 255, 255, .5);
   border: rgba(0, 0, 0, .7) 1px solid;
   font-size: 1.1vw;
   color: #476268;
@@ -218,7 +228,7 @@ h6 {
 }
 
 .btn:hover {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(255, 255, 255, .3);
   border: rgba(0, 0, 0, .7) 1px solid;
 }
 rau
@@ -343,4 +353,21 @@ rau
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 125%;
+}
+
+.mycohort {
+  width: 50vw;
+  height: 50vh;
+  border: black .5vh solid;
+  margin: 0 auto;
+  padding: 1vw;
+  margin-top: 1vh;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .7);
+  background: rgba(255, 255, 255,.7 );
+
+
+}
+.mycohort h3 {
+  margin-bottom: 1vh;
 }

@@ -2,7 +2,9 @@
 <div class="myContainer">
   <% @instructors.reverse.each do |i| %>
     <div class="instructor">
-      <h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> <button class="btn infoButton"><%= link_to 'Edit', edit_instructor_path(i)%></button></h3>
+      <h3><%= i.full_name.capitalize %> <button class="btn infoButton"><%= link_to 'Edit', edit_instructor_path(i)%></button>
+        <button class="btn infoButton"><%= link_to 'Delete', instructor_path(i.id), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'terminate' %></button>
+      </h3>
       <div class="instructorInfo">
         <p>Age: <%= i.age %></p>
         <p>Education: <%= i.education %></p>
