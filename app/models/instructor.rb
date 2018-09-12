@@ -1,7 +1,7 @@
 class Instructor < ApplicationRecord
   before_save { self.email = email.downcase }
   has_secure_password
-  validates :password, presence: true, length: {maximum: 32, minimum: 6}
+  validates :password, presence: true, length: {maximum: 32, minimum: 2}
   validates :email, presence: true, length: { maximum: 100 }
 
   # def User.digest(string)

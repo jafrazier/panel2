@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_09_06_142247) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "email"
-    t.boolean "admin"
+    t.boolean "admin", default: false
   end
 
   create_table "students", force: :cascade do |t|

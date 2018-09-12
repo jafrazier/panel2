@@ -1,8 +1,8 @@
+<h1>Instructors <button class="btn pageBtn"><%= link_to "New", new_instructor_path %></button></h1>
 <div class="myContainer">
-  <h1>Instructors <button class="btn pageBtn"><%= link_to "New instructor", new_instructor_path %></button></h1>
   <% @instructors.reverse.each do |i| %>
     <div class="instructor">
-      <h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> <button class="btn infoButton"><%= link_to 'Show', i %></button> <button class="btn infoButton"><%= link_to 'Edit', edit_instructor_path(i)%></button></h3>
+      <h3><%= i.first_name.capitalize %> <%= i.last_name.capitalize %> <button class="btn infoButton"><%= link_to 'Edit', edit_instructor_path(i)%></button></h3>
       <div class="instructorInfo">
         <p>Age: <%= i.age %></p>
         <p>Education: <%= i.education %></p>

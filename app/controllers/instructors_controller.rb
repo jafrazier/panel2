@@ -8,7 +8,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(instructor_params)
     if @instructor.save
       session[:user_id] = @instructor.id
-      redirect_to @instructor
+      redirect_to instructors_path
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class InstructorsController < ApplicationController
   def update
     @instructor = Instructor.find(params[:id])
     if @instructor.update(instructor_params)
-      redirect_to @instructor
+      redirect_to instructors_path
     else
       render 'edit'
     end
@@ -40,7 +40,7 @@ class InstructorsController < ApplicationController
 
 
   def instructor_params
-    params.require(:instructor).permit(:first_name, :last_name, :age, :salary, :education, :email, :password)
+    params.require(:instructor).permit(:first_name, :last_name, :age, :salary, :education, :email, :password, :admin)
   end
 
 

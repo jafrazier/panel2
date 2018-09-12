@@ -14,7 +14,7 @@ class CohortsController < ApplicationController
     @courses = Course.all
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
-      redirect_to @cohort
+      redirect_to cohorts_path
     else
       render 'new'
     end
@@ -37,7 +37,7 @@ class CohortsController < ApplicationController
     @courses = Course.all
     @cohort = Cohort.find(params[:id])
     if @cohort.update(cohort_params)
-      redirect_to @cohort
+      redirect_to cohorts_path
     else
       render 'edit'
     end
