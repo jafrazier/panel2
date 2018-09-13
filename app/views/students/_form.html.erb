@@ -9,5 +9,5 @@
 <%= f.text_field :education,:class => "form-control"%><br>
 <%= f.label 'Pick a cohort', :class => "label" %>
 <%= f.collection_select :cohort_id, Cohort.all , :id, :name, {include_blank: true}, :class => "form-control" %><br>
-<%= f.submit :class=>"btn" %>
+<%= f.submit :class=> "btn" %>
 <% end %>
