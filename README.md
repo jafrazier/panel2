@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+log in
+email: tony@abc.com
+password: 123456
