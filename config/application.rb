@@ -4,6 +4,8 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+config.assets.enabled = true
+config.serve_static_assets = true
 Bundler.require(*Rails.groups)
 module Panel2
   class Application < Rails::Application
